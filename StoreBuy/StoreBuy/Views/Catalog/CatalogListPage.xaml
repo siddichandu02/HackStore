@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="StoreBuy.Views.Catalog.CatalogListPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:badge="clr-namespace:Syncfusion.XForms.BadgeView;assembly=Syncfusion.SfBadgeView.XForms"
+    xmlns:behavior="clr-namespace:StoreBuy.Behaviors.Catalog"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:commonBehavior="clr-namespace:StoreBuy.Behaviors"
+    xmlns:controls="clr-namespace:StoreBuy.Controls"
+    xmlns:converter="clr-namespace:StoreBuy.Converters"
+    xmlns:helper="clr-namespace:StoreBuy.Helpers"
+    xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
+    xmlns:template="clr-namespace:StoreBuy.Views.Templates"
+    x:Name="catalogListPage"
+    Title="Catalog List page"
+    NavigationPage.HasNavigationBar="True"
+    NavigationPage.HasBackButton="False"
+    Style="{StaticResource ContentPageStyle}">
+
+    <ContentPage.Behaviors>
+        <behavior:CartBehavior />
+    </ContentPage.Behaviors>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:BooleanToColorConverter x:Key="boolToColorConverter" />
+            <converter:BooleanToStringConverter x:Key="boolToStringConverter" />
+            <converter:IntToThicknessConverter x:Key="intToThicknessConverter" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <Label Text="Items"
+                   TextColor="White"
+                   Grid.Column="0"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   FontSize="18"/>
+            <buttons:SfButton
+                            Command="{Binding BindingContext.SearchCommand, Source={x:Reference ListViewList}}"
+                            CornerRadius="4"
+                            Style="{StaticResource IconButtonStyle}"
+                            Text="{StaticResource Search}"
+                            HorizontalOptions="End"
+                            VerticalOptions="Center"
+                            WidthRequest="40"
+                TextColor="White"
+                Grid.Column="1"/>
+            <badge:SfBadgeView
+                            Margin="{Binding Path=BindingContext.CartItemCount, Source={x:Reference catalogListPage}, Converter={x:StaticResource intToThicknessConverter}}"
+                            Padding="0"
+                            BadgeText="{Binding Path=BindingContext.CartItemCount, Source={x:Reference catalogListPage}, Mode=TwoWay}"
+                            HeightRequest="42"
+                            HorizontalOptions="End"
+                            VerticalOptions="Center"
+                            WidthRequest="40"
+                Grid.Column="2">
+                <badge:SfBadgeView.Content>
+                    <buttons:SfButton
+                                    Command="{Binding Path=BindingContext.CardItemCommand, Source={x:Reference ListViewList}}"
+                                    CornerRadius="4"
+                                    Style="{StaticResource IconButtonStyle}"
+                                    Text="{StaticResource Cart}"
+                        TextColor="White"/>
+                </badge:SfBadgeView.Content>
+                <badge:SfBadgeView.BadgeSettings>
+                    <badge:BadgeSetting
+                                    BackgroundColor="{DynamicResource PrimaryColor}"
+                                    BadgeType="None"
+                                    FontSize="9"
+                                    Offset="-5,10" />
+                </badge:SfBadgeView.BadgeSettings>
+            </badge:SfBadgeView>
+        </Grid>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--  ListView for catalog list  -->
+            <listView:SfListView
+                x:Name="ListViewList"
+                Grid.Row="1"
+                Margin="{OnIdiom Default='0,8,8,0',
+                                 Desktop='15,15,15,0'}"
+                AutoFitMode="Height"
+                           
+                           HorizontalOptions="FillAndExpand"
+                IsStickyHeader="False"
+                ItemSize="170"
+                ItemSpacing="8,8,0,8"
+                ItemsSource="{Binding ItemCatalogueList}"
+                Style="{StaticResource SfListViewStyle}">
+
+                <listView:SfListView.Behaviors>
+                    <commonBehavior:SfListViewTapBehavior Command="{Binding Path=BindingContext.ItemSelectedCommand, Source={x:Reference catalogListPage}}" />
+                </listView:SfListView.Behaviors>
+
+                <listView:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <template:ProductListTemplate ParentBindingContext="{Binding Path=BindingContext, Source={x:Reference catalogListPage}}" />
+                    </DataTemplate>
+                </listView:SfListView.ItemTemplate>
+
+            </listView:SfListView>
+
+        </Grid>
+
+    </ContentPage.Content>
+
+</ContentPage>

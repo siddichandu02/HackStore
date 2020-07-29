@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             xmlns:controls="clr-namespace:StoreBuy.Controls"
+             xmlns:viewModel="clr-namespace:StoreBuy.ViewModels.Detail"
+             xmlns:ListView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             x:Class="StoreBuy.Views.Detail.StoreItemPage"
+             BackgroundColor="{DynamicResource Gray-White}"
+             NavigationPage.HasNavigationBar="True"
+    Title="Store Items">
+
+
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Styles.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+
+
+
+  <ContentPage.Content>
+    <Grid RowSpacing="0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+
+            <BoxView Grid.Row="1"
+               Style="{StaticResource SeparatorStyle}" />
+
+            <StackLayout Grid.Row="2"
+                   Spacing="0">
+
+        <ListView:SfListView  x:Name="storeItemTable"
+                              Padding="0"
+                              AutoFitMode="Height"
+                              IsScrollBarVisible="false"
+                              ItemSpacing="0"
+                              ItemsSource="{Binding StoreItems}"
+                              SelectionBackgroundColor="Transparent"
+                              VerticalOptions="FillAndExpand"
+                              StickyFooterPosition="Body">
+
+
+
+          <ListView:SfListView.HeaderTemplate>
+            <DataTemplate>
+              <Grid Grid.Row="2"
+                    HeightRequest="48"
+                    Margin="0,8,0,0"
+                    Padding="16,0,8,0"
+                    ColumnSpacing="0"
+                    BackgroundColor="{StaticResource Gray-100}">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="{OnIdiom Desktop=2.5*, Tablet=1*, Phone=2*}" />
+                  <ColumnDefinition Width="{OnIdiom Desktop=0.5*, Tablet=1*, Phone=1*}" />
+                  <ColumnDefinition Width="{OnIdiom Desktop=0.7*, Tablet=1*, Phone=1*}" />
+
+
+
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0"
+                       Text="Item Name"
+                       HorizontalOptions="Start"
+                       FontSize="12"
+                       FontFamily="{StaticResource Montserrat-SemiBold}"
+                       TextColor="{DynamicResource Gray-800}"
+                       VerticalOptions="Center" />
+
+
+
+                <Label Grid.Column="1"
+                       HorizontalOptions="Start"
+                       Text="Qty"
+                       FontSize="12"
+                       FontFamily="{StaticResource Montserrat-SemiBold}"
+                       TextColor="{DynamicResource Gray-800}"
+                       VerticalOptions="Center" />
+
+
+
+                <Label  Grid.Column="2"
+                        HorizontalOptions="Start"
+                        Text="Price"
+                        FontSize="12"
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        TextColor="{DynamicResource Gray-800}"
+                        VerticalOptions="Center" />
+
+
+
+              </Grid>
+            </DataTemplate>
+          </ListView:SfListView.HeaderTemplate>
+
+
+
+          <!--  List View for the table  -->
+          <ListView:SfListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                <StackLayout Margin="0"
+                             Spacing="0">
+                  <Grid HeightRequest="48"
+                        Margin="16,0,8,0"
+                        ColumnSpacing="0">
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="{OnIdiom Desktop=2.5*, Tablet=1*, Phone=2*}" />
+                      <ColumnDefinition Width="{OnIdiom Desktop=0.5*, Tablet=1*, Phone=1*}" />
+                      <ColumnDefinition Width="{OnIdiom Desktop=0.7*, Tablet=1*, Phone=1*}" />
+                    </Grid.ColumnDefinitions>
+
+
+
+                    <Label Margin="0"
+                           Grid.Column="0"
+                           Text="{Binding ItemName}"
+                           FontSize="10"
+                           FontFamily="{StaticResource Montserrat-Medium}"
+                           TextColor="{DynamicResource Gray-900}"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Start" />
+
+
+
+
+
+                    <Label  Grid.Column="1"
+                            Text="{Binding Quantity}"
+                            FontSize="10"
+                            FontFamily="{StaticResource Montserrat-Medium}"
+                            TextColor="{DynamicResource Gray-900}"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Start" />
+
+
+
+                    <!--  Total points for the club -->
+                    <Label  Grid.Column="2"
+                            Text="{Binding TotalPrice}"
+                            FontSize="10"
+                            FontFamily="{StaticResource Montserrat-Medium}"
+                            TextColor="{DynamicResource Gray-900}"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Start" />
+                  </Grid>
+                  <BoxView Grid.Row="1"
+                           Grid.ColumnSpan="5"
+                           Style="{StaticResource SeparatorStyle}" />
+                </StackLayout>
+              </ViewCell>
+            </DataTemplate>
+          </ListView:SfListView.ItemTemplate>
+        </ListView:SfListView>
+
+
+
+        <Grid HeightRequest="48"
+              Margin="0,0,8,0"
+              ColumnSpacing="0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="{OnIdiom Desktop=2.5*, Tablet=1*, Phone=2*}" />
+            <ColumnDefinition Width="{OnIdiom Desktop=0.5*, Tablet=1*, Phone=1*}" />
+
+
+
+            <ColumnDefinition Width="{OnIdiom Desktop=0.7*, Tablet=1*, Phone=1*}" />
+
+
+
+          </Grid.ColumnDefinitions>
+
+
+
+          <!--  Gold points for the club -->
+          <Label  Grid.Column="0"
+                  Grid.ColumnSpan="2"
+                  Text="Total Price :"
+                  FontSize="14"
+                  FontFamily="{StaticResource Montserrat-Medium}"
+                  TextColor="{DynamicResource Gray-900}"
+                  VerticalOptions="Center"
+                  HorizontalOptions="Center" />
+
+
+
+          <!--  Total points for the club -->
+          <Label  Grid.Column="2"
+                  Text="{Binding ItemsTotalPrice}"
+                  FontSize="14"
+                  FontFamily="{StaticResource Montserrat-Medium}"
+                  TextColor="{DynamicResource Gray-900}"
+                  VerticalOptions="Center"
+                  HorizontalOptions="Start" />
+
+
+
+
+        </Grid>
+      </StackLayout>
+
+
+
+
+    </Grid>
+  </ContentPage.Content>
+</ContentPage>

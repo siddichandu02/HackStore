@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddToCart" xml:space="preserve">
+    <value>Cart/AddToCart</value>
+  </data>
+  <data name="APIPrefix" xml:space="preserve">
+    <value>http://192.168.29.239:8084/api/</value>
+  </data>
+  <data name="AvailableItems" xml:space="preserve">
+    <value>Items Available : </value>
+  </data>
+  <data name="CartAddMsg" xml:space="preserve">
+    <value>Item Added To Cart</value>
+  </data>
+  <data name="CartErrorMsg" xml:space="preserve">
+    <value>Unable To Add Cart</value>
+  </data>
+  <data name="CartItemCount" xml:space="preserve">
+    <value>CartItemCount</value>
+  </data>
+  <data name="CartUpdateMsg" xml:space="preserve">
+    <value>Updated Quantity</value>
+  </data>
+  <data name="CategoryId" xml:space="preserve">
+    <value>CategoryId</value>
+  </data>
+  <data name="ChangePasswordURI" xml:space="preserve">
+    <value>User/ChangePassword</value>
+  </data>
+  <data name="CryptoKey" xml:space="preserve">
+    <value>sblw-3hn8-sqoy19</value>
+  </data>
+  <data name="DateTimeFormat" xml:space="preserve">
+    <value>dd-MMMM-yyyy HH:mm</value>
+  </data>
+  <data name="DefaultIntValue" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="DefaultStringValue" xml:space="preserve">
+    <value>null</value>
+  </data>
+  <data name="DeleteCartItem" xml:space="preserve">
+    <value>cart/DeleteCartItem</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmailExist" xml:space="preserve">
+    <value>Email already exists.. please login or else try register with different mail</value>
+  </data>
+  <data name="ErrorMsg" xml:space="preserve">
+    <value>Something went wrong</value>
+  </data>
+  <data name="FeatureErrorMsg" xml:space="preserve">
+    <value>Feature Not supported on this device</value>
+  </data>
+  <data name="FindStoreByDistanceURI" xml:space="preserve">
+    <value>StoreSearch/FindStoresByDistance?UserId=</value>
+  </data>
+  <data name="FindStoreByItemsURI" xml:space="preserve">
+    <value>StoreSearch/FindStoresByItems?UserId=</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>FirstName</value>
+  </data>
+  <data name="ForgotPasswordMail" xml:space="preserve">
+    <value>ForgotPasswordMail</value>
+  </data>
+  <data name="ForgotPasswordURI" xml:space="preserve">
+    <value>User/ForgotPassword</value>
+  </data>
+  <data name="GetCartItems" xml:space="preserve">
+    <value>Cart/CartItems?UserId=</value>
+  </data>
+  <data name="GetCategoryItems" xml:space="preserve">
+    <value>itemcategory/getallitemcategories</value>
+  </data>
+  <data name="GetDate" xml:space="preserve">
+    <value>&amp;Date=</value>
+  </data>
+  <data name="GetFilledSlots" xml:space="preserve">
+    <value>slot/GetFilledSlots?StoreId=</value>
+  </data>
+  <data name="GetItemsOfCategory" xml:space="preserve">
+    <value>Item/CategoryRelatedItems?CategoryId=</value>
+  </data>
+  <data name="GetOrders" xml:space="preserve">
+    <value>Order/GetOrdersByUser?UserId=</value>
+  </data>
+  <data name="GetUser" xml:space="preserve">
+    <value>&amp;UserId=</value>
+  </data>
+  <data name="GetUserByUserNameURI" xml:space="preserve">
+    <value>User/GetUserByUserName?UserName=</value>
+  </data>
+  <data name="ItemId" xml:space="preserve">
+    <value>ItemId</value>
+  </data>
+  <data name="ItemList" xml:space="preserve">
+    <value>Item/SearchRelatedItems?SearchString=</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>LastName</value>
+  </data>
+  <data name="Latitude" xml:space="preserve">
+    <value>&amp;Latitude=</value>
+  </data>
+  <data name="LocationEnableMsg" xml:space="preserve">
+    <value>Location Not Enabled on this device</value>
+  </data>
+  <data name="LocationErrorMsg" xml:space="preserve">
+    <value>Unable To Get Location on this device</value>
+  </data>
+  <data name="LoginURI" xml:space="preserve">
+    <value>User/UserLogin</value>
+  </data>
+  <data name="Longitude" xml:space="preserve">
+    <value>&amp;Longitude=</value>
+  </data>
+  <data name="MailErrorMsg" xml:space="preserve">
+    <value>Unable To Send the Mail</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>NewPassword</value>
+  </data>
+  <data name="NoEmailExist" xml:space="preserve">
+    <value>Email Id Doesn't Exist</value>
+  </data>
+  <data name="NoLocationErrorMsg" xml:space="preserve">
+    <value>No Location Found</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>OldPassword</value>
+  </data>
+  <data name="OldPasswordMsg" xml:space="preserve">
+    <value>Old Password is not correct</value>
+  </data>
+  <data name="OTP" xml:space="preserve">
+    <value>OTPReceived</value>
+  </data>
+  <data name="OtpExpired" xml:space="preserve">
+    <value>OTP Expired</value>
+  </data>
+  <data name="OtpFormatMsg" xml:space="preserve">
+    <value>Enter Code in Correct Format</value>
+  </data>
+  <data name="OTPVerifyURI" xml:space="preserve">
+    <value>User/VerifyOTP</value>
+  </data>
+  <data name="OtpWrong" xml:space="preserve">
+    <value>Enter the correct code</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>UserPassword</value>
+  </data>
+  <data name="PasswordErrorMsg" xml:space="preserve">
+    <value>Unable to change password</value>
+  </data>
+  <data name="PasswordMismatch" xml:space="preserve">
+    <value>Passwords didn't match</value>
+  </data>
+  <data name="PasswordUpdated" xml:space="preserve">
+    <value>Password Changed successfully...</value>
+  </data>
+  <data name="PasswordUpdatedLogin" xml:space="preserve">
+    <value>Password Changed.. Please Login..</value>
+  </data>
+  <data name="PermissionMsg" xml:space="preserve">
+    <value>Permission Denied</value>
+  </data>
+  <data name="PlaceOrder" xml:space="preserve">
+    <value>Order/InsertOrder</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="RegisterSuccess" xml:space="preserve">
+    <value>Successfully Registered</value>
+  </data>
+  <data name="RegisterUnsuccess" xml:space="preserve">
+    <value>Unable to register please try later</value>
+  </data>
+  <data name="ResetPasswordURI" xml:space="preserve">
+    <value>User/ResetPassword</value>
+  </data>
+  <data name="RGWIP" xml:space="preserve">
+    <value>http://192.168.29.239/</value>
+  </data>
+  <data name="SlotDate" xml:space="preserve">
+    <value>SlotDate</value>
+  </data>
+  <data name="SlotSuccess" xml:space="preserve">
+    <value>BOOKING SLOT SUCCESSFULL</value>
+  </data>
+  <data name="SlotTime" xml:space="preserve">
+    <value>SlotTime</value>
+  </data>
+  <data name="SlotTimeFormat" xml:space="preserve">
+    <value>HH:mm</value>
+  </data>
+  <data name="SlotUnsuccess" xml:space="preserve">
+    <value>BOOKING SLOT UNSUCCESSFULL</value>
+  </data>
+  <data name="StoreId" xml:space="preserve">
+    <value>StoreId</value>
+  </data>
+  <data name="SyncFusion" xml:space="preserve">
+    <value>https://cdn.syncfusion.com/essential-ui-kit-for-xamarin.forms/common/uikitimages/</value>
+  </data>
+  <data name="TextBoxEmpty" xml:space="preserve">
+    <value>Fields Can't be Empty</value>
+  </data>
+  <data name="UpdateItemQuantity" xml:space="preserve">
+    <value>Cart/UpdateQuantity</value>
+  </data>
+  <data name="UserCheck" xml:space="preserve">
+    <value>user/UserCheck</value>
+  </data>
+  <data name="UserFirstName" xml:space="preserve">
+    <value>UserFirstName</value>
+  </data>
+  <data name="UserFullName" xml:space="preserve">
+    <value>UserFullName</value>
+  </data>
+  <data name="UserId" xml:space="preserve">
+    <value>UserId</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>UserName</value>
+  </data>
+  <data name="UserPassword" xml:space="preserve">
+    <value>UserPassword</value>
+  </data>
+  <data name="UserPhone" xml:space="preserve">
+    <value>UserPhone</value>
+  </data>
+  <data name="UserRegisterURI" xml:space="preserve">
+    <value>User/UserRegister</value>
+  </data>
+  <data name="WrongCredentials" xml:space="preserve">
+    <value>Credentials are Wrong</value>
+  </data>
+</root>

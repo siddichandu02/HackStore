@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="StoreBuy.Views.Transaction.OrderViewPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:viewModel="clr-namespace:StoreBuy.ViewModels.Transaction"
+    xmlns:svg="clr-namespace:StoreBuy.Controls" xmlns:syncfusion="clr-namespace:Syncfusion.SfBarcode.XForms;assembly=Syncfusion.SfBarcode.XForms" xmlns:sfpopup="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms"
+    Title="Order Status"
+    BackgroundColor="{DynamicResource Gray-100}"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <ScrollView HorizontalOptions="Center" VerticalOptions="Center">
+            <StackLayout
+                HorizontalOptions="Center"
+                Spacing="0"
+                VerticalOptions="Center">
+
+               
+
+                <!--  Order status image  -->
+                <svg:SVGImage
+                    Margin="0,5,0,0"
+                    HeightRequest="80"
+                    WidthRequest="80" 
+                    Source="{Binding OrderIcon}" />
+
+                <Label
+                    Margin="0,20,0,0"
+                    Style="{StaticResource LabelStyle}"
+                    Text="{Binding Message}" />
+
+                <Label
+                    Margin="17,8,17,2"
+                    Style="{StaticResource DescriptionLabelStyle}"
+                    FontSize="10"
+                    TextColor="Gray"
+                    Text="Store" />
+
+                <Label
+                    Margin="17,0,17,0"
+                    FontSize="12"
+                    TextColor="Black"
+                    Style="{StaticResource DescriptionLabelStyle}"
+                    Text="{Binding StoreName}" />
+
+                <Label
+                    Margin="17,8,17,2"
+                    FontSize="10"
+                    TextColor="Gray"
+                    Style="{StaticResource DescriptionLabelStyle}"
+                    Text="Location" />
+
+                <Label
+                    Margin="17,0,17,0"
+                    FontSize="12"
+                    TextColor="Black"
+                    Style="{StaticResource DescriptionLabelStyle}"
+                    Text="{Binding LocationName}" />
+
+                <Label
+                    Margin="17,8,17,2"
+                    FontSize="10"
+                    TextColor="Gray"
+                    Style="{StaticResource DescriptionLabelStyle}"
+                    Text="DateandTime" />
+
+                <Label
+                    Margin="17,0,17,0"
+                    FontSize="12"
+                    TextColor="Black"
+                    Style="{StaticResource DescriptionLabelStyle}"
+                    Text="{Binding Slot}" />
+
+                <syncfusion:SfBarcode Text="{Binding QRText}" Symbology="QRCode" ShowText="False"/>
+
+                <button:SfButton
+                    Command="{Binding OKCommand}"
+                    Style="{StaticResource SfGradientButtonStyle}"
+                    Text="Ok" />
+
+                <sfpopup:SfPopupLayout x:Name="popupLayout"
+                             IsOpen="{Binding DisplayPopup}">
+                    <sfpopup:SfPopupLayout.PopupView>
+                        <sfpopup:PopupView HeightRequest="230"
+                             ShowHeader="False"
+                             ShowFooter="False">
+                            <sfpopup:PopupView.ContentTemplate>
+                                <DataTemplate>
+                                    <StackLayout>
+                                        <ActivityIndicator IsRunning="true" Color="Orange" VerticalOptions="CenterAndExpand"/>
+                                        <Label Text="loading" HorizontalOptions="Center" Margin="0,30,0,20" FontSize="22"/>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </sfpopup:PopupView.ContentTemplate>
+                        </sfpopup:PopupView>
+                    </sfpopup:SfPopupLayout.PopupView>
+                </sfpopup:SfPopupLayout>
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

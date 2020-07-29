@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="StoreBuy.Views.Profile.ProfilePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:viewModel="clr-namespace:StoreBuy.ViewModels.Profile"
+    Title="Profile"
+    BackgroundColor="{DynamicResource Gray-White}"
+    NavigationPage.HasNavigationBar="True"
+    NavigationPage.HasBackButton="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <!--  Binding context for Profile Page  -->
+   
+  <ContentPage.Content>
+    <ScrollView>
+
+
+
+      <StackLayout Spacing="0">
+
+
+
+
+
+
+        <BoxView Style="{StaticResource SeparatorStyle}" />
+
+
+
+
+
+        <!--  Profile Name  -->
+        <Label Margin="0,10,0,10"
+               FontFamily="{StaticResource Montserrat-Bold}"
+               FontSize="16"
+               HorizontalOptions="Center"
+               Text="{Binding Name}"
+               TextColor="{DynamicResource Gray-900}"
+               VerticalOptions="Center" />
+
+
+
+        <BoxView Style="{StaticResource SeparatorStyle}" />
+
+        <!--  Grid for mail id label and icon  -->
+        <Grid Padding="16"
+              ColumnSpacing="16">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+
+
+
+          <Label Grid.Column="0"
+                 Style="{StaticResource CommonProfileIconLabelStyle}"
+                 Text="{StaticResource Mail}" />
+
+
+
+          <Label Grid.Column="1"
+                 Style="{StaticResource CommonProfileLabelStyle}"
+                 Text="{Binding Email}" />
+
+        </Grid>
+
+
+        <BoxView Style="{StaticResource SeparatorStyle}" />
+
+
+
+        <!--  Grid for mobile number label and icon  -->
+        <Grid Padding="16"
+              ColumnSpacing="16">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+
+
+
+          <Label Grid.Column="0"
+                 Style="{StaticResource CommonProfileIconLabelStyle}"
+                 Text="{StaticResource VoiceCall}" />
+
+
+                    <Label Grid.Column="1"
+                 Style="{StaticResource CommonProfileLabelStyle}"
+                 Text="{Binding Phone}" />
+
+                </Grid>
+
+
+
+        <BoxView Style="{StaticResource SeparatorStyle}" />
+
+
+
+        <!--  Grid for notification label and navigation icon  -->
+        <Grid x:Name="NotificationGrid"
+              Padding="16"
+              ColumnSpacing="16">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+
+
+
+          <Grid.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding NextCommand}"
+                                  CommandParameter="{x:Reference NotificationGrid}" />
+          </Grid.GestureRecognizers>
+
+
+
+
+
+
+
+          <Label Grid.Column="1"
+                 Style="{StaticResource CommonProfileLabelStyle}"
+                 Text="Change Password" />
+
+
+
+          <Label Grid.Column="2"
+                 HorizontalOptions="End"
+                 Style="{StaticResource CommonProfileIconLabelStyle}"
+                 Text="{StaticResource Next}" />
+
+
+
+        </Grid>
+
+
+
+        <!--<BoxView Style="{StaticResource SeparatorStyle}" />
+
+ 
+
+                -->
+        <!--  Grid for help label and icon  -->
+        <!--
+                <Grid Padding="16" ColumnSpacing="16">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+ 
+
+                    <Label
+                        Grid.Column="0"
+                        Style="{StaticResource CommonProfileIconLabelStyle}"
+                        Text="{StaticResource Help}" />
+
+ 
+
+                    <Label
+                        Grid.Column="1"
+                        Style="{StaticResource CommonProfileLabelStyle}"
+                        Text="Help" />
+
+ 
+
+                </Grid>-->
+
+
+
+        <BoxView Style="{StaticResource SeparatorStyle}" />
+
+
+
+      </StackLayout>
+
+
+
+    </ScrollView>
+
+
+
+  </ContentPage.Content>
+</ContentPage>
